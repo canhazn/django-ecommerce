@@ -17,3 +17,9 @@ def ProductList(request):
     serializer = ProductSerializer(products, many=True)
     print(serializer.data)
     return Response(serializer.data)
+
+@api_view(['POST'])
+def OrderCreate(request):
+    order = request.data
+    
+    return Response(serializer.data)
