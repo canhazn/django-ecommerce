@@ -1,4 +1,6 @@
 from django.db import models
+import datetime
+
 # Create your models here.
 
 class Product(models.Model):
@@ -14,6 +16,13 @@ class Order(models.Model):
     shipping_address = models.CharField(max_length=200)
     date_ordered     = models.DateTimeField(auto_now_add=True)
     completed        = models.BooleanField(default=False)
+
+    # def __init__(self, customer, phone, shipping_address):
+    #     self.customer = customer
+    #     self.phone    = phone
+    #     self.shipping_address = shipping_address
+    #     self.completed = False
+    #     self.date_ordered = datetime.datetime.now()
 
     @property
     def get_card_total(self):
